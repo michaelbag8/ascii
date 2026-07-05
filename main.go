@@ -33,7 +33,7 @@ func LoadFontFile(input, filename string)error{
 	segments := strings.Split(input, "\\n")
 	for i, segment := range segments{
 		if segment == ""{
-			if i < len(segments)-1{
+			if i == 0 || segments[i-1] != ""{
 				fmt.Println()
 			}
 			continue
