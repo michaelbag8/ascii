@@ -69,7 +69,10 @@ func main(){
 	input := os.Args[1]
 
 	if len(os.Args) == 3{
-		fontFile = os.Args[2] + ".txt"
+		fontFile = os.Args[2]
+		if !strings.HasSuffix(fontFile, ".txt"){
+			fontFile += ".txt"
+			}
 	}
 
 	err := LoadFontFile(input, fontFile)
